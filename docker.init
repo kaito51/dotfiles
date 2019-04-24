@@ -1,0 +1,39 @@
+apt-get -y update
+apt-get -y install vim
+apt-get -y install python-pip
+pip install --upgrade pip
+apt-get -y install git
+apt-get -y install zsh
+apt-get -y install trash-cli
+apt-get install -y nkf
+apt-get install -y tree
+apt-get install -y tzdata
+ln -s /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
+
+# python3
+# https://oku.edu.mie-u.ac.jp/~okumura/python3/install.html
+#apt-get -y install wget
+#cd /tmp
+#wget https://www.python.org/ftp/python/3.6.6/Python-3.6.6.tgz
+#tar xvzf Python-3.6.6.tgz
+#cd Python-3.6.6
+#./configure
+#make
+#make test
+#make install
+
+# powerline shell
+cd /tmp
+git clone https://github.com/powerline/fonts.git --depth=1
+cd fonts
+./install.sh
+cd ..
+rm -rf fonts
+pip install --user powerline-shell
+
+# vim
+mkdir -p ~/.vim/bundle
+git clone git://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
+
+# mecab
+apt-get install -y mecab mecab-ipadic-utf8

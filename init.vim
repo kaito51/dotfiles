@@ -22,7 +22,6 @@ nnoremap <Space>l $
 nnoremap <Space>h ^
 nnoremap <Space>p %
 nnoremap <Space>vs :vsp<Enter>:term<Enter><C-w><C-x><C-w><C-l>A
-"nnoremap <Space>vs :VimShell<Enter>
 nnoremap <Space>vp :VimShellPop<Enter>
 nnoremap <Space>vt :VimShellTab<Enter>
 nnoremap <Space>u :Unite file<Enter>
@@ -58,7 +57,6 @@ if dein#load_state('$HOME/.vim/dein/repos/github.com/Shougo/dein.vim')
     call dein#add('Shougo/deol.nvim', {'rev':'alb5108fb'})
     call dein#add('kassio/neoterm')
     call dein#add('thinca/vim-quickrun')
-    "memo : add vimproc
     
     "NERDTree
     call dein#add('scrooloose/nerdtree')
@@ -73,6 +71,10 @@ if dein#load_state('$HOME/.vim/dein/repos/github.com/Shougo/dein.vim')
     call dein#add('roxma/vim-hug-neovim-rpc')
     call dein#add('Shougo/neosnippet.vim')
     call dein#add('Shougo/neosnippet-snippets')
+    call dein#add('Shougo/context_filetype.vim')
+    
+    "LSP
+    "call dein#add('autozimu/LanguageClient-neovim', {'branch':'next', 'do':'zsh install.sh'})
 
     "color
     call dein#add('tomasr/molokai')
@@ -107,6 +109,7 @@ if dein#load_state('$HOME/.vim/dein/repos/github.com/Shougo/dein.vim')
 
     call dein#end()
     call dein#save_state()
+    "When uninstall plugin http://katsumeshix.hatenablog.jp/entry/2017/10/16/103709
 endif
 
 if dein#check_install()
@@ -187,13 +190,6 @@ let g:deoplete#enable_smart_case=1
 let g:deoplete#max_list=10
 let g:deoplete#auto_complete_delay=0
 let g:deoplete#auto_complete_start_length=1
-"let g:neocomplcache_enable_underbar_completion=1
-"let g:neocomplcache_min_syntax_length=3
-"inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-"let g:neocomplcache_filetype_lists={
-"            \ 'default':'',
-"            \ 'vimshell':$HOME.'/.vimshell_hist'
-"            \}
 
 "nerd-tree
 let g:NERDTreeShowBookmarks=1
@@ -247,6 +243,17 @@ let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['jaen'] = 'ﳅ'
 let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['zh'] = 'ﲽ'
 let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['jazh'] = 'ﲽ'
 let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['txt'] = ''
+
+"LSP
+"set hidden
+"let g:LanguageClient_serverCommands = {
+    "\ 'python': ['/usr/local/bin/pyls'],
+    "\ }
+"let g:LanguageClient_loadSettings = 1
+"let g:LanguageClient_hasSnippetSupport = 0
+"set completefunc=LanguageClient#complete
+"nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
+"nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
 
 "winresizer [Space+e : start]
 nnoremap <Space>e :WinResizerStartResize<CR>

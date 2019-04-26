@@ -100,3 +100,15 @@ vimf() {
   nvim $selected_files
 }
 
+#zplug https://blog.dais0n.net/zsh_like_fish/
+source $HOME/.zplug/init.zsh
+zplug 'zsh-users/zsh-syntax-highlighting'
+zplug 'zsh-users/zsh-autosuggestions'
+# プラグインがまだインストールされてないならインストールするか聞く
+if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    fi
+fi
+zplug load --verbose

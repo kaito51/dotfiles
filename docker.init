@@ -30,6 +30,10 @@ cd fonts
 cd ..
 rm -rf fonts
 pip install --user powerline-shell
+# OR
+#pip3 install --user powerline-shell
+mkdir ~/.config/powerline-shell
+touch ~/.config/powerline-shell/config.json
 
 # vim
 mkdir -p ~/.vim/bundle
@@ -37,3 +41,20 @@ git clone git://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
 
 # mecab
 apt-get install -y mecab mecab-ipadic-utf8
+
+# fzf
+git clone https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install
+
+#bat
+#https://github.com/sharkdp/bat/blob/master/doc/README-ja.md
+
+#LSP
+pip install python-language-server
+pip3 install python-language-server
+
+#zplug
+curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh
+
+# colortest
+#http://adragoona.hatenablog.com/entry/2014/11/03/152539

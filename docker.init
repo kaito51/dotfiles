@@ -11,6 +11,12 @@ ln -s /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
 git clone https://github.com/pyenv/pyenv.git ~/.pyenv
 pip install --upgrade pip
 
+#pyenv
+echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bashrc
+echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bashrc
+echo 'eval "$(pyenv init -)"' >> ~/.bashrc
+source ~/.bashrc
+
 # python3
 # https://oku.edu.mie-u.ac.jp/~okumura/python3/install.html
 #apt install -y install wget

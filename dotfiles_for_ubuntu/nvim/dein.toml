@@ -1,0 +1,161 @@
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+[[plugins]]
+repo = 'cocopon/iceberg.vim'
+
+[[plugins]]
+repo = 'Shougo/unite.vim'
+hook_add = '''
+    nnoremap <Space>u :Unite file<Enter>
+'''
+
+[[plugins]]
+repo = 'Shougo/deoplete.nvim'
+hook_add = '''
+    let g:deoplete#enable_at_startup=1
+    let g:deoplete#enable_smart_case=1
+    let g:deoplete#max_list=10
+    let g:deoplete#auto_complete_delay=0
+    let g:deoplete#auto_complete_start_length=1
+'''
+
+[[plugins]]
+repo = 'Shougo/neco-syntax'
+
+[[plugins]]
+repo = 'Shougo/neco-vim'
+
+[[plugins]]
+repo = 'zchee/deoplete-zsh'
+
+[[plugins]]
+repo = 'w0rp/ale'
+hook_add = '''
+    let g:ale_sign_error = ''
+    let g:ale_sign_warning = ''
+    let g:ale_lint_on_text_changed = 0
+    let g:ale_set_quickfix = 0
+    let g:ale_lint_on_enter = 0
+    function! s:ale_list()
+        let g:ale_open_list = 1
+        call ale#Queue(0, 'lint_file')
+    endfunction
+    command! ALEList call s:ale_list()
+    nnoremap <Space>a :ALEList<CR>
+    nnoremap <Space>A :let g:ale_open_list = 0<CR>
+'''
+
+[[plugins]]
+repo = 'mechatroner/rainbow_csv'
+
+[[plugins]]
+repo = 'vim-airline/vim-airline'
+hook_add = '''
+    let g:airline#extensions#default#layout = [['a', 'b', 'c'], ['x', 'y', 'z']]
+    let g:airline_section_c = '%t'
+    let g:airline_section_x = '%{&filetype}'
+    let g:airline_section_z = '%3l:%2v %{airline#extensions#ale#get_warning()} %{airline#extensions#ale#get_error()}'
+    let g:airline#extensions#ale#error_symbol = ''
+    let g:airline#extensions#ale#warning_symbol = ''
+    let g:airline#extensions#branch#enabled = 1
+    let g:airline#extensions#tabline#enabled = 1
+    let g:airline#extensions#wordcount#enabled = 0
+    let g:airline#extensions#tabline#tab_nr_type = 1
+    let g:airline#extensions#default#section_truncate_width = {}
+    let g:airline#extensions#whitespace#enabled = 1
+'''
+
+[[plugins]]
+repo = 'vim-airline/vim-airline-themes'
+
+[[plugins]]
+repo = 'Shougo/neosnippet-snippets'
+
+[[plugins]]
+repo = 'Shougo/neosnippet.vim'
+hook_add = '''
+    imap <C-k> <Plug>(neosnippet_expand_or_jump)
+    smap <C-k> <Plug>(neosnippet_expand_or_jump)
+    xmap <C-k> <Plug>(neosnippet_expand_target)
+    smap <expr><TAB> neosnippet#expandable_or_jumpable() ? "/<Plug>(neosnippet_expand_or_jump)" : "/<TAB>"
+'''
+depends = ['neosnippet-snippets']
+
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+hook_add = '''
+    nnoremap <Space>gv :Gvdiff<CR>
+    nnoremap <Space>gs :Gstatus<CR>
+'''
+
+[[plugins]]
+repo = 'scrooloose/nerdtree'
+hook_add = '''
+    nnoremap <Space>nt :NERDTree<Enter>
+    let g:NERDTreeShowBookmarks=1
+    let g:NERDTreeDirArrows = 1
+    let g:NERDTreeDirArrowExpandable  = ''
+    let g:NERDTreeDirArrowCollapsible = '▼'
+    function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
+        exec 'autocmd filetype nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg='. a:guibg .' guifg='. a:guifg
+        exec 'autocmd filetype nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
+    endfunction
+    call NERDTreeHighlightFile('py',     'yellow',  'none', 'yellow',  '#151515')
+    call NERDTreeHighlightFile('md',     'blue',    'none', '#3366FF', '#151515')
+    call NERDTreeHighlightFile('yml',    'yellow',  'none', 'yellow',  '#151515')
+    call NERDTreeHighlightFile('config', 'yellow',  'none', 'yellow',  '#151515')
+    call NERDTreeHighlightFile('conf',   'yellow',  'none', 'yellow',  '#151515')
+    call NERDTreeHighlightFile('json',   'yellow',  'none', 'yellow',  '#151515')
+    call NERDTreeHighlightFile('html',   'yellow',  'none', 'yellow',  '#151515')
+    call NERDTreeHighlightFile('styl',   'cyan',    'none', 'cyan',    '#151515')
+    call NERDTreeHighlightFile('css',    'cyan',    'none', 'cyan',    '#151515')
+    call NERDTreeHighlightFile('rb',     'Red',     'none', 'red',     '#151515')
+    call NERDTreeHighlightFile('js',     'Red',     'none', '#ffa500', '#151515')
+    call NERDTreeHighlightFile('php',    'Magenta', 'none', '#ff00ff', '#151515')
+'''
+
+[[plugins]]
+repo = 'ryanoasis/vim-devicons'
+hook_add = '''
+    let g:WebDevIconsUnicodeDecorateFolderNodes = 1
+    let g:DevIconsEnableFoldersOpenClose = 1
+    let g:WebDevIconsUnicodeDecorateFolderNodesDefaultSymbol = ''
+    let g:DevIconsDefaultFolderOpenSymbol = ''
+'''
+
+[[plugins]]
+repo = 'tiagofumo/vim-nerdtree-syntax-highlight'
+
+[[plugins]]
+repo = 'airblade/vim-gitgutter'
+
+[[plugins]]
+repo = 'tpope/vim-surround'
+
+[[plugins]]
+repo = 'Yggdroot/indentLine'
+hook_add = '''
+    let g:indentLine_color_gui = "#ffffff"
+'''
+
+[[plugins]]
+repo = 'simeji/winresizer'
+hook_add = '''
+    nnoremap <Space>e :WinResizerStartResize<CR>
+    let g:winresizer_horiz_resize = 1
+    let g:winresizer_vert_resize = 2
+'''
+
+[[plugins]]
+repo = 'jiangmiao/auto-pairs'
+
+[[plugins]]
+repo = 'Lokaltog/vim-easymotion'
+hook_add = '''
+    map + <Plug>(easymotion-s2)
+    map <Space>i <Plug>(easymotion-w)
+    map <Space>I <Plug>(easymotion-b)
+    let g:EasyMotion_enter_jump_first = 1
+    let g:EasyMotion_space_jump_first = 1
+'''

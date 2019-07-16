@@ -1,0 +1,93 @@
+HISTFILE=~/.zsh_history
+HISTSIZE=10000
+SAVEHIST=10000
+setopt hist_ignore_dups
+setopt hist_ignore_all_dups
+setopt share_history
+
+autoload -Uz compinit
+compinit -u
+if [ -e /usr/local/share/zsh-completions ]; then
+  fpath=(/usr/local/share/zsh-completions $fpath)
+fi
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+setopt list_packed
+zstyle ':completion:*' list-colors ''
+
+setopt correct
+setopt no_beep
+
+unsetopt auto_menu
+setopt auto_pushd
+setopt auto_cd
+setopt interactive_comments
+
+# key
+autoload history-search-end
+zle -N history-beginning-search-forward-end history-search-end
+zle -N history-beginning-search-backward-end history-search-end
+bindkey "^p" history-beginning-search-backward-end
+bindkey "^n" history-beginning-search-forward-end
+
+[ -z "$ENHANCD_ROOT" ] && function chpwd { ls }
+[ -z "$ENHANCD_ROOT" ] || export ENHANCD_HOOK_AFTER_CD="ls"
+
+# export
+export CLICOLOR=1
+export LSCOLORS=DxGxcxdxCxegedabagacad
+export PYENV_ROOT=$HOME/.pyenv
+export PATH=$PYENV_ROOT/bin:$PATH
+export FZF_DEFAULT_OPTS="--height 70% --border --preview 'head -40 {}'"
+export XDG_CONFIG_HOME=$HOME/.config
+export XDG_CACHE_HOME=$HOME/.cache
+
+# alias
+alias tree2='tree -L 2'
+alias rm='trash-put' # rm -> trash commands
+alias vim="nvim"
+alias tark="tar -zxvf"
+alias tara="tar -zcvf"
+alias cat="/usr/bin/bat"
+
+# powerline-shell
+function powerline_precmd() {
+    PS1="$($HOME/.local/bin/powerline-shell --shell zsh $?)"
+}
+
+function install_powerline_precmd() { 
+    for s in "${precmd_functions[@]}"; do 
+        if [ "$s" = "powerline_precmd" ]; then 
+            return
+        fi
+    done
+    precmd_functions+=(powerline_precmd)
+}
+if [ "$TERM" != "linux" ]; then
+    install_powerline_precmd
+fi
+
+eval "$(pyenv init -)"
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# preview https://qiita.com/Sa2Knight/items/6635af9fc648a5431685
+# bat https://github.com/sharkdp/bat/blob/master/doc/README-ja.md
+vimf() {
+  files=$(ls) &&
+  selected_files=$(echo "$files" | fzf -m --preview '/usr/local/bat/bat --color=always --style=header,grid {}') &&
+  nvim $selected_files
+}
+
+#zplug https://blog.dais0n.net/zsh_like_fish/
+#OR "git clone https://github.com/zplug/zplug $HOME/.zplug"
+#color setting  https://cipepser.hatenablog.com/entry/plug-autosuggestions-color
+source $HOME/.zplug/init.zsh
+zplug 'zsh-users/zsh-syntax-highlighting'
+zplug 'zsh-users/zsh-autosuggestions'
+
+if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    fi
+fi
+zplug load --verbose

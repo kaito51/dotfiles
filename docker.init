@@ -3,10 +3,7 @@ apt install -y vim
 apt install -y python-pip
 apt install -y git
 apt install -y zsh
-apt install -y trash-cli
-apt install -y nkf
-apt install -y tree
-apt install -y tzdata
+apt install -y trash-cli nkf tree tzdata
 ln -s /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
 git clone https://github.com/pyenv/pyenv.git ~/.pyenv
 pip install --upgrade pip
@@ -55,6 +52,11 @@ pyenv install anaconda3-5.3.1
 # dein
 #curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
 #sh ./installer.sh ~/.cache/dein
+
+# color - iceberg
+# http://cocopon.github.io/iceberg.vim/
+
+#######################################################3
 
 #LSP
 #pip install python-language-server

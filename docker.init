@@ -1,7 +1,6 @@
 apt -y update
 apt install -y vim
 apt install -y python-pip
-pip --upgrade pip
 apt install -y git
 apt install -y zsh
 apt install -y trash-cli
@@ -10,6 +9,7 @@ apt install -y tree
 apt install -y tzdata
 ln -s /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
 git clone https://github.com/pyenv/pyenv.git ~/.pyenv
+pip install --upgrade pip
 
 # python3
 # https://oku.edu.mie-u.ac.jp/~okumura/python3/install.html

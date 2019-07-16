@@ -16,18 +16,19 @@ echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bashrc
 echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bashrc
 echo 'eval "$(pyenv init -)"' >> ~/.bashrc
 source ~/.bashrc
+apt install -y wget curl
 
-# python3
-# https://oku.edu.mie-u.ac.jp/~okumura/python3/install.html
-#apt install -y install wget
-#cd /tmp
-#wget https://www.python.org/ftp/python/3.6.6/Python-3.6.6.tgz
-#tar xvzf Python-3.6.6.tgz
-#cd Python-3.6.6
-#./configure
-#make
-#make test
-#make install
+pyenv install anaconda3-5.3.1
+
+# fzf
+#git clone https://github.com/junegunn/fzf.git ~/.fzf
+#~/.fzf/install
+
+#bat
+#https://github.com/sharkdp/bat/blob/master/doc/README-ja.md
+
+#zplug
+#curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh
 
 # powerline shell
 #cd /tmp
@@ -42,26 +43,41 @@ source ~/.bashrc
 #mkdir ~/.config/powerline-shell
 #touch ~/.config/powerline-shell/config.json
 
-# vim
-#mkdir -p ~/.vim/bundle
-#git clone git://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
+# neovim
+#apt install -y neovim
+#pyenv global system
+#pip install neovim
+#pyenv global anaconda3-5.3.1
+#pip install neovim
+# OR?
+#pip3 install neovim
 
-# mecab
-#apt install install -y mecab mecab-ipadic-utf8
-
-# fzf
-#git clone https://github.com/junegunn/fzf.git ~/.fzf
-#~/.fzf/install
-
-#bat
-#https://github.com/sharkdp/bat/blob/master/doc/README-ja.md
+# dein
+#curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
+#sh ./installer.sh ~/.cache/dein
 
 #LSP
 #pip install python-language-server
 #pip3 install python-language-server
 
-#zplug
-#curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh
+# python3
+# https://oku.edu.mie-u.ac.jp/~okumura/python3/install.html
+#apt install -y wget
+#cd /tmp
+#wget https://www.python.org/ftp/python/3.6.6/Python-3.6.6.tgz
+#tar xvzf Python-3.6.6.tgz
+#cd Python-3.6.6
+#./configure
+#make
+#make test
+#make install
+
+# vim
+#mkdir -p ~/.vim/bundle
+#git clone git://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
+
+# mecab
+#apt install -y mecab mecab-ipadic-utf8
 
 # colortest
 #http://adragoona.hatenablog.com/entry/2014/11/03/152539

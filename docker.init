@@ -43,6 +43,10 @@ pyenv install anaconda3-5.3.1
 #touch ~/.config/powerline-shell/config.json
 
 # neovim
+# https://qiita.com/giwagiwa/items/128aec59af622efc7a97
+#apt install -y software-properties-common
+#add-apt-repository ppa:neovim-ppa/stable
+#apt update
 #apt install -y neovim
 #pyenv global system
 #pip install neovim

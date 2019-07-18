@@ -53,7 +53,7 @@ if dein#load_state(s:dein_cache_dir)
     call dein#begin(s:dein_cache_dir)
     
     " deol
-    call dein#add('Shougo/deol.nvim', {'rev':'alb5108fb'})
+    call dein#add('Shougo/deol.nvim')
 
     "fzf
     call dein#add('junegunn/fzf', { 'build': './install --all', 'merged': 0 })

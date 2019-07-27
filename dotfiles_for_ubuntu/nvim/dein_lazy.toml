@@ -1,11 +1,18 @@
 [[plugins]]
-repo = 'heavenshell/vim-jsdoc'
-on_ft = ['javascript']
-
-[[plugins]]
 repo = 'moll/vim-node'
-on_ft = ['javascript']
+on_ft = ['javascript', 'ejs']
 
 [[plugins]]
 repo = 'pangloss/vim-javascript'
-on_ft = ['javascript']
+on_ft = ['javascript', 'ejs']
+
+[[plugins]]
+repo = 'mattn/emmet-vim'
+on_ft = ['javascript', 'html', 'ejs']
+hook_add = '''
+    let g:user_emmet_settings = { 'lang':'ja' }
+'''
+ 
+[[plugins]]
+repo = 'alvan/vim-closetag'
+on_ft = ['javascript', 'html', 'ejs']

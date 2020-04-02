@@ -23,7 +23,7 @@ pyenv install anaconda3-5.3.1
 
 #bat
 #https://github.com/sharkdp/bat/blob/master/doc/README-ja.md
-#wget https://github.com/sharkdp/bat/releases/download/v0.11.0/bat_0.11.0_amd64.deb
+#wget https://github.com/sharkdp/bat/releases/download/v0.13.0/bat_0.13.0_amd64.deb
 #dpkg -i bat_0.13.0_amd64.deb
 
 #zplug

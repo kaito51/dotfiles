@@ -72,6 +72,9 @@ pyenv install anaconda3-5.3.1
 # sudo apt install -y git openssl libssl-dev libbz2-dev libreadline-dev libsqlite3-dev libffi-dev
 # pyenv install 3.8.2 # example
 
+# neovim - for raspbian
+#http://hiratarosu.hateblo.jp/entry/2019/01/26/205929
+
 #LSP
 #pip install python-language-server
 #pip3 install python-language-server

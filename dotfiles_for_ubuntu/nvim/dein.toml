@@ -11,23 +11,13 @@ hook_add = '''
 '''
 
 [[plugins]]
-repo = 'Shougo/deoplete.nvim'
+repo = 'neoclide/coc.nvim'
 hook_add = '''
-    let g:deoplete#enable_at_startup=1
-    let g:deoplete#enable_smart_case=1
-    let g:deoplete#max_list=10
-    let g:deoplete#auto_complete_delay=0
-    let g:deoplete#auto_complete_start_length=1
+    nmap <silent> <space>li :<C-u>CocList<cr>
+    nmap <silent> <space>ho :<C-u>call CocAction('doHover')<cr>
+    nmap <silent> <space>df <Plug>(coc-definition)
+    nmap <silent> <space>rf <Plug>(coc-references)
 '''
-
-[[plugins]]
-repo = 'Shougo/neco-syntax'
-
-[[plugins]]
-repo = 'Shougo/neco-vim'
-
-[[plugins]]
-repo = 'zchee/deoplete-zsh'
 
 [[plugins]]
 repo = 'w0rp/ale'

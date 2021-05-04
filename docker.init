@@ -75,6 +75,14 @@ sudo apt purge -y nodejs npm
 node -v
 npm install - yarn
 
+# coc.nvim 関連
+# https://note.com/ktakayama/n/nb084ed5c587e
+# https://qiita.com/Amadeus_vn/items/5dfcf8d3676c2c5576ef#%E6%A9%9F%E8%83%BD%E3%81%AE%E5%91%BC%E3%81%B3%E5%87%BA%E3%81%97%E6%96%B9
+pyenv global system
+pip install jedi
+pyenv global anaconda3-5.3.1
+pip install jedi
+
 #######################################################
 
 # python install - for raspbian

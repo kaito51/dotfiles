@@ -3,3 +3,7 @@
 以下のextensionは　:CocInstall <hoge> で入る  
   * coc-python
   * coc-json
+  * coc-html
+  * coc-css
+  * coc-sh
+  * coc-tsserver

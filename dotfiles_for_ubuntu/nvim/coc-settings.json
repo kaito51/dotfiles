@@ -1,5 +1,5 @@
-{                                                                                                                       
-    diagnostic.enable: false,    
-    python.linting.enabled: false,    
-    python.jediPath: ~/.pyenv/versions/neovim3/lib/python3.7/site-packages/    
+{
+    "diagnostic.enable": false,
+    "python.linting.enabled": false,
+    "python.jediPath": "~/.pyenv/versions/anaconda3-2020.11/lib/python3.7/site-packages/"
 }

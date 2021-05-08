@@ -9,3 +9,4 @@ $HOME/.config/ 以下
   * coc-css
   * coc-sh
   * coc-tsserver
+  * coc-pairs

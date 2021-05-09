@@ -10,3 +10,5 @@ $HOME/.config/ 以下
   * coc-sh
   * coc-tsserver
   * coc-pairs
+  * coc-actions
+  * coc-neosnippet

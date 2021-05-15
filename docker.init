@@ -82,6 +82,8 @@ pyenv install anaconda3-2020.11
 #pip install jedi
 
 #######################################################
+#locale ja_JP setting
+#https://qiita.com/valzer0/items/d7166a27c156b0699655
 
 # python install - for raspbian
 # https://qiita.com/hoshi621/items/c8b82ab42564256df884

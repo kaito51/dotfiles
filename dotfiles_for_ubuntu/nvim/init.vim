@@ -88,6 +88,9 @@ let g:fzf_colors =
   \ 'marker':  ['fg', 'Keyword'],
   \ 'spinner': ['fg', 'Label'],
   \ 'header':  ['fg', 'Comment'] }
+  
+" https://maguro.dev/coc-pairs-cursor/
+inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 "preview https://wonderwall.hatenablog.com/entry/2017/10/07/220000
 command! -bang -nargs=? -complete=dir Files

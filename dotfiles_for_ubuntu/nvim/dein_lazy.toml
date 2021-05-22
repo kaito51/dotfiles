@@ -16,3 +16,7 @@ hook_add = '''
 [[plugins]]
 repo = 'alvan/vim-closetag'
 on_ft = ['javascript', 'html', 'ejs']
+
+[[plugins]]
+repo = 'rust-lang/rust.vim'
+on_ft = ['rust']

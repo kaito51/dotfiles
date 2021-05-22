@@ -1,5 +1,6 @@
 {
     "diagnostic.enable": false,
     "python.linting.enabled": false,
-    "python.jediPath": "~/.pyenv/versions/anaconda3-2020.11/lib/python3.7/site-packages/"
+    "python.jediPath": "~/.pyenv/versions/anaconda3-2020.11/lib/python3.7/site-packages/",
+    "coc.preferences.formatOnType": true
 }

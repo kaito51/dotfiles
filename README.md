@@ -9,7 +9,7 @@ $HOME/.config/powerline-shell/ 以下
  参考　https://dev.classmethod.jp/articles/use-rust-with-vim/
 
 # coc.nvimの導入済みextension
-以下のextensionは　:CocInstall <hoge> で入る  
+以下のextensionは　:CocInstall hoge で入る  
   * coc-python
   * coc-json
   * coc-html

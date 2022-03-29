@@ -81,6 +81,15 @@ pyenv install anaconda3-2020.11
 #pyenv global anaconda3-5.3.1
 #pip install jedi
 
+# cclsのインストール (参考 : https://blog.medalotte.net/archives/1002)
+# OSに応じてダウンロードファイルを変更
+# git clone --depth=1 --recursive https://github.com/MaskRay/ccls
+# cd ccls
+# wget -c http://releases.llvm.org/8.0.0/clang+llvm-8.0.0-x86_64-linux-gnu-ubuntu-18.04.tar.xz
+# tar xf clang+llvm-8.0.0-x86_64-linux-gnu-ubuntu-18.04.tar.xz
+# cmake -H. -BRelease -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH=$PWD/clang+llvm-8.0.0-x86_64-linux-gnu-ubuntu-18.04
+# sudo cmake --build Release --target install
+
 #######################################################
 #locale ja_JP setting
 #https://qiita.com/valzer0/items/d7166a27c156b0699655

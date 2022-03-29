@@ -1,6 +1,18 @@
 {
     "diagnostic.enable": false,
     "python.linting.enabled": false,
-    "python.jediPath": "~/.pyenv/versions/anaconda3-2020.11/lib/python3.7/site-packages/",
-    "coc.preferences.formatOnType": true
+    "python.jediPath": "~/.pyenv/versions/anaconda3-2020.11/lib/python3.8/site-packages/",
+    "coc.preferences.formatOnType": true,
+    "languageserver": {
+        "ccls": {
+            "command": "ccls",
+            "filetypes": ["c", "cpp", "cuda", "objc", "objcpp"],
+            "rootPatterns": [".ccls-root", "compile_commands.json", ".git"],
+            "initializationOptions": {
+                "cache": {
+                    "directory": "/tmp/ccls-cache"
+                }
+            }
+        }
+    }
 }

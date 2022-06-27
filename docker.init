@@ -13,7 +13,7 @@ echo 'eval "$(pyenv init -)"' >> ~/.bashrc
 source ~/.bashrc
 sudo apt install -y wget curl
 
-pyenv install anaconda3-2020.11
+pyenv install anaconda3-2022.05
 
 # fzf
 #git clone https://github.com/junegunn/fzf.git ~/.fzf

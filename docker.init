@@ -89,6 +89,16 @@ pyenv install anaconda3-2022.05
 # bearのインストール
 # sudo apt install bear
 
+# rustのインストール (https://qiita.com/yoshiyasu1111/items/0c3d08658560d4b91431)
+# curl https://sh.rustup.rs -sSf | sh
+# sudo apt install cargo
+# source $HOME/.cargo/env
+## zshrcにパスの追加設定がいるかも
+
+# exaのインストール
+## 下記はなぜかzshだとだめでbashだといけた
+# cargo install exa
+
 
 #######################################################
 #locale ja_JP setting

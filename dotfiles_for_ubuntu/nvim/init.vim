@@ -27,6 +27,7 @@ map <Space>l $
 map <Space>h ^
 map <Space>p %
 nnoremap <Space>vs :vsp<Enter>:term<Enter><C-w><C-x><C-w><C-l>A
+nnoremap <Space>te :tabnew<Enter>:te<Enter>
 nnoremap '' ''zz
 nnoremap n nzz
 nnoremap N Nzz

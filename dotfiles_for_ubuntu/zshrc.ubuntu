@@ -29,6 +29,16 @@ zle -N history-beginning-search-backward-end history-search-end
 bindkey "^p" history-beginning-search-backward-end
 bindkey "^n" history-beginning-search-forward-end
 
+# alias
+alias ls='exa --icons'
+alias tree2='exa -T -L 2 --icons'
+alias tree3='exa -T -L 3 --icons'
+alias rm='trash-put' # rm -> trash commands
+alias vim="nvim"
+alias tark="tar -zxvf"
+alias tara="tar -zcvf"
+alias cat="/usr/bin/bat"
+
 [ -z "$ENHANCD_ROOT" ] && function chpwd { ls }
 [ -z "$ENHANCD_ROOT" ] || export ENHANCD_HOOK_AFTER_CD="ls"
 
@@ -43,16 +53,6 @@ export XDG_CACHE_HOME=$HOME/.cache
 # for Rust
 export DYLD_LIBRARY_PATH=$HOME/.cargo
 export LD_LIBRARY_PATH=$HOME/.cargo
-
-# alias
-alias ls='exa --icons'
-alias tree2='exa -T -L 2 --icons'
-alias tree3='exa -T -L 3 --icons'
-alias rm='trash-put' # rm -> trash commands
-alias vim="nvim"
-alias tark="tar -zxvf"
-alias tara="tar -zcvf"
-alias cat="/usr/bin/bat"
 
 # powerline-shell
 function powerline_precmd() {

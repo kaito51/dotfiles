@@ -18,8 +18,8 @@ set clipboard+=unnamedplus
 set autoindent
 set ignorecase
 set nohlsearch
-set foldmethod=indent
-set foldlevel=2
+set foldmethod=manual
+"set foldlevel=2
 set inccommand=split
 
 tnoremap <ESC> <C-\><C-n>

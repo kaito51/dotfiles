@@ -28,7 +28,7 @@
         "args": [
             "--debug", "False",
             "--input_model_path", "text0",
-            "--base_path", "/home/mizushima/Documents/workspace_colmap/public/20230313_museum/D/pan_only/0_80_01110_0",
+            "--base_path", "hoge",
             "--output_dir_name", "images",
             "--extract_top_k", "10",
             "--sort_mode", "separately",

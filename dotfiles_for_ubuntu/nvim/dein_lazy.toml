@@ -20,3 +20,32 @@ on_ft = ['javascript', 'html', 'ejs']
 [[plugins]]
 repo = 'rust-lang/rust.vim'
 on_ft = ['rust']
+
+[[plugins]]
+# https://github.com/puremourning/vimspector#breakpoints
+# https://qiita.com/deresmos/items/01a59df438e1b881ef11
+# vimspector home dir '/home/mizushima/.cache/dein/repos/github.com/puremourning/vimspector'
+repo = "puremourning/vimspector"
+on_ft = ["python", "javascript"]
+build = "./install_gadget.py --enable-python --force-enable-node"
+hook_add = '''
+    let g:vimspector_install_gadgets = ['debugpy']
+    nnoremap <BackSpace>l :call vimspector#LaunchWithSettings({'configuration': 'python_file'})<CR>
+    nnoremap <BackSpace>r :call vimspector#Restart()<CR>
+    nnoremap <BackSpace>R :call vimspector#Reset()<CR>
+    nnoremap <BackSpace>s :call vimspector#Continue()<CR>
+    nnoremap <BackSpace>c :call vimspector#RunToCursor()<CR>
+
+    nnoremap <BackSpace>b :call vimspector#ToggleBreakpoint()<CR>
+    nnoremap <BackSpace>C :call vimspector#ClearBreakpoints()<CR>
+    nnoremap <BackSpace>p :call vimspector#ListBreakpoints()<CR>
+    nnoremap <BackSpace>B :call vimspector#ToggleBreakpoint({'condition': ''})
+    nnoremap <BackSpace>i :call vimspector#StepInto()<CR>
+    nnoremap <BackSpace>o :call vimspector#StepOver()<CR>
+
+    nmap <BackSpace>h <Plug>VimspectorBalloonEval
+    xmap <BackSpace>h <Plug>VimspectorBalloonEval
+
+    nmap <BackSpace>Ss :VimspectorMkSession 
+    nmap <BackSpace>Sl :VimspectorLoadSession 
+'''

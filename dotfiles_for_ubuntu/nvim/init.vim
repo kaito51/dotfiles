@@ -19,7 +19,6 @@ set autoindent
 set ignorecase
 set nohlsearch
 set foldmethod=manual
-"set foldlevel=2
 set inccommand=split
 
 tnoremap <ESC> <C-\><C-n>
@@ -31,7 +30,6 @@ nnoremap <Space>te :tabnew<Enter>:te<Enter>
 nnoremap '' ''zz
 nnoremap n nzz
 nnoremap N Nzz
-nnoremap <Space>B oimport pdb;pdb.set_trace()<ESC>
 inoremap <Tab> <C-n>
 vnoremap { "zdi{<C-R>z}<ESC>
 vnoremap [ "zdi[<C-R>z]<ESC>
